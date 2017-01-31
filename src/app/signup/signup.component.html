@@ -1,0 +1,22 @@
+<div class="signup center-block jumbotron">
+  <h1>Signup</h1>
+  <form role="form" (submit)="signup($event, username.value, password.value)">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" #username class="form-control" id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" #password class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <a [routerLink]="['/login']">Click here to Login</a>
+    <br>
+    <br>
+    <div class="center-block">
+      <h4 *ngIf="response">{{response.path}} - {{response.message}}</h4>
+      <h6 *ngIf="response">{{response.status}} {{response.error}}</h6>
+      <p *ngIf="response" class="small">{{response.timestamp}} {{response.exception}}</p>
+    </div>
+  </form>
+</div>
